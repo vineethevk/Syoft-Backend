@@ -1,0 +1,29 @@
+{
+  "name": "syoft-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vineethevk/Syoft-Backend.git"
+  },
+  "author": "Vineeth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vineethevk/Syoft-Backend/issues"
+  },
+  "homepage": "https://github.com/vineethevk/Syoft-Backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
+  }
+}
