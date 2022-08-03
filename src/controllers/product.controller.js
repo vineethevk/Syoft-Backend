@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
-router.get("", authentication, async (req, res) => {
+router.get("/", authentication, async (req, res) => {
     try {
         if (req.user.role === "staff") return res.status(400).send("Not Accessible")
         const products = await Products.find().lean().exec();
@@ -49,9 +49,9 @@ router.patch("/:id", authentication, async (req, res) => {
 
 
 function authentication(req, res, next) {
-    const token = req.body.token
+    const token = req.body.token || req.headers.token;
 
-    if (!token || token === null) return res.status(501).send("You don't have access please login");
+    if (!token || token === null) return res.status(501).send("please login");
 
     jwt.verify(token, "Vineeth", (err, { user }) => {
         if (err) return res.sendStatus(403);

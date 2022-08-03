@@ -13,7 +13,7 @@ const register = async (req, res) => {
         if (user) return res.status(501).send("User already exist");
         user = await User.create(req.body);
         const token = newToken(user);
-        res.send({ token });
+        res.status(201).send({ token });
     } catch (err) {
         res.status(501).send(err.message);
     }
